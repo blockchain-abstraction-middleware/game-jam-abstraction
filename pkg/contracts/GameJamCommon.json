@@ -1,0 +1,2350 @@
+{
+  "contractName": "GameJamCommon",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "balance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "competitors",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "ipfsHash",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "votes",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "stage",
+      "outputs": [
+        {
+          "internalType": "enum GameJamCommon.Stages",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "isGameJamAdmin",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"balance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"competitors\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"ipfsHash\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"votes\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"isGameJamAdmin\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"stage\",\"outputs\":[{\"internalType\":\"enum GameJamCommon.Stages\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/bbk-dev/git/game-jam-smart-contracts/contracts/GameJamCommon.sol\":\"GameJamCommon\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/bbk-dev/git/game-jam-smart-contracts/contracts/GameJamCommon.sol\":{\"keccak256\":\"0xfeb963f9a0f712c984f559297be609f556dcf7821c80592aedb8c199b4497879\",\"urls\":[\"bzz-raw://11da6579a9bb936e4b6f2b22e5f6948cab16fa260bbf2d4ce40169de7a05f39f\",\"dweb:/ipfs/QmQN5aMi9XRQ6FTKkQPBUZnMh22DsU98cxbDV8xjtbZAo8\"]},\"openzeppelin-solidity/contracts/access/Roles.sol\":{\"keccak256\":\"0xb002c378d7b82a101bd659c341518953ca0919d342c0a400196982c0e7e7bcdb\",\"urls\":[\"bzz-raw://00a788c4631466c220b385bdd100c571d24b2deccd657615cfbcef6cadf669a4\",\"dweb:/ipfs/QmTEwDbjJNxmMNCDMqtuou3dyM8Wtp8Q9NFvn7SAVM7Jf3\"]}},\"version\":1}",
+  "bytecode": "0x60806040526000600360006101000a81548160ff0219169083600281111561002357fe5b021790555034801561003457600080fd5b506103e2806100446000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80630f6feac214610051578063b69ef8a8146100ad578063b7a076c6146100cb578063c040e6b81461018f575b600080fd5b6100936004803603602081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101bb565b604051808215151515815260200191505060405180910390f35b6100b56101d8565b6040518082815260200191505060405180910390f35b61010d600480360360208110156100e157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101de565b6040518080602001838152602001828103825284818151815260200191508051906020019080838360005b83811015610153578082015181840152602081019050610138565b50505050905090810190601f1680156101805780820380516001836020036101000a031916815260200191505b50935050505060405180910390f35b61019761029a565b604051808260028111156101a757fe5b60ff16815260200191505060405180910390f35b60006101d18260006102ad90919063ffffffff16565b9050919050565b60015481565b6004602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561028a5780601f1061025f5761010080835404028352916020019161028a565b820191906000526020600020905b81548152906001019060200180831161026d57829003601f168201915b5050505050908060010154905082565b600360009054906101000a900460ff1681565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415610334576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602281526020018061038c6022913960400191505060405180910390fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1690509291505056fe526f6c65733a206163636f756e7420697320746865207a65726f2061646472657373a265627a7a723158201208513a323b1c8ee64fe2941d215a3f27319ab81ff5810e7f24c7b12361632264736f6c634300050c0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80630f6feac214610051578063b69ef8a8146100ad578063b7a076c6146100cb578063c040e6b81461018f575b600080fd5b6100936004803603602081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101bb565b604051808215151515815260200191505060405180910390f35b6100b56101d8565b6040518082815260200191505060405180910390f35b61010d600480360360208110156100e157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101de565b6040518080602001838152602001828103825284818151815260200191508051906020019080838360005b83811015610153578082015181840152602081019050610138565b50505050905090810190601f1680156101805780820380516001836020036101000a031916815260200191505b50935050505060405180910390f35b61019761029a565b604051808260028111156101a757fe5b60ff16815260200191505060405180910390f35b60006101d18260006102ad90919063ffffffff16565b9050919050565b60015481565b6004602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561028a5780601f1061025f5761010080835404028352916020019161028a565b820191906000526020600020905b81548152906001019060200180831161026d57829003601f168201915b5050505050908060010154905082565b600360009054906101000a900460ff1681565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415610334576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602281526020018061038c6022913960400191505060405180910390fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1690509291505056fe526f6c65733a206163636f756e7420697320746865207a65726f2061646472657373a265627a7a723158201208513a323b1c8ee64fe2941d215a3f27319ab81ff5810e7f24c7b12361632264736f6c634300050c0032",
+  "sourceMap": "86:1537:2:-;;;476:19;454:41;;;;;;;;;;;;;;;;;;;;;;;;;;86:1537;8:9:-1;5:2;;;30:1;27;20:12;5:2;86:1537:2;;;;;;;",
+  "deployedSourceMap": "86:1537:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;86:1537:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1259:119;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1259:119:2;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;312:19;;;:::i;:::-;;;;;;;;;;;;;;;;;;;700:53;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;700:53:2;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;700:53:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;454:41;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1259:119;1333:4;1354:19;1365:7;1354:6;:10;;:19;;;;:::i;:::-;1347:26;;1259:119;;;:::o;312:19::-;;;;:::o;700:53::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;454:41::-;;;;;;;;;;;;;:::o;779:200:8:-;851:4;894:1;875:21;;:7;:21;;;;867:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;952:4;:11;;:20;964:7;952:20;;;;;;;;;;;;;;;;;;;;;;;;;945:27;;779:200;;;;:::o",
+  "source": "pragma solidity 0.5.12;\n\nimport \"openzeppelin-solidity/contracts/access/Roles.sol\";\n\n\ncontract GameJamCommon {\n  using Roles for Roles.Role;\n\n  enum Stages\n  {\n    Registration,\n    InProgress,\n    Finished\n  }\n\n  // Define the roles\n  Roles.Role internal admins;\n\n  // Track the balance of the smart contract\n  uint public balance;\n\n  // List of addresses for Game Jam competitors\n  address[] internal competitorAddresses;\n\n  // Set the initial Stage\n  Stages public stage = Stages.Registration;\n\n  // winner of the game jam\n  address payable winner;\n\n  // Struct for competitor data\n  struct CompetitorData {\n    string ipfsHash;\n    uint votes;\n  }\n\n  // mapping for addresses to game locations\n  mapping(address => CompetitorData) public competitors;\n\n  // On Deploy, the sender of the transaction will be added as a admin\n  modifier onlyGameJamAdmin()\n  {\n    require(isGameJamAdmin(msg.sender), \"GameJamAdmin role required: caller does not have the GameJamAdmin role\");\n    _;\n  }\n\n  // Modifier used to restrict access unless a given Stage is active\n  modifier onlyAtStage(Stages _stage) {\n    require(\n      stage == _stage,\n      \"Function cannot be called at this time.\"\n    );\n    _;\n  }\n\n  // Function to check that the address is a valid admin\n  function isGameJamAdmin(address account)\n    public\n    view\n    returns (bool)\n  {\n    return admins.has(account);\n  }\n\n  // Advance the state of the contract to the next stage\n  function nextStage()\n    internal\n  {\n    stage = Stages(uint(stage) + 1);\n  }\n\n  // This modifier moves to the next stage\n  modifier transitionNext()\n  {\n    _;\n    nextStage();\n  }\n}",
+  "sourcePath": "/home/bbk-dev/git/game-jam-smart-contracts/contracts/GameJamCommon.sol",
+  "ast": {
+    "absolutePath": "/home/bbk-dev/git/game-jam-smart-contracts/contracts/GameJamCommon.sol",
+    "exportedSymbols": {
+      "GameJamCommon": [
+        443
+      ]
+    },
+    "id": 444,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 353,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/access/Roles.sol",
+        "file": "openzeppelin-solidity/contracts/access/Roles.sol",
+        "id": 354,
+        "nodeType": "ImportDirective",
+        "scope": 444,
+        "sourceUnit": 873,
+        "src": "25:58:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 443,
+        "linearizedBaseContracts": [
+          443
+        ],
+        "name": "GameJamCommon",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 357,
+            "libraryName": {
+              "contractScope": null,
+              "id": 355,
+              "name": "Roles",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 872,
+              "src": "119:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Roles_$872",
+                "typeString": "library Roles"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "113:27:2",
+            "typeName": {
+              "contractScope": null,
+              "id": 356,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 798,
+              "src": "129:10:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$798_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            }
+          },
+          {
+            "canonicalName": "GameJamCommon.Stages",
+            "id": 361,
+            "members": [
+              {
+                "id": 358,
+                "name": "Registration",
+                "nodeType": "EnumValue",
+                "src": "164:12:2"
+              },
+              {
+                "id": 359,
+                "name": "InProgress",
+                "nodeType": "EnumValue",
+                "src": "182:10:2"
+              },
+              {
+                "id": 360,
+                "name": "Finished",
+                "nodeType": "EnumValue",
+                "src": "198:8:2"
+              }
+            ],
+            "name": "Stages",
+            "nodeType": "EnumDefinition",
+            "src": "144:66:2"
+          },
+          {
+            "constant": false,
+            "id": 363,
+            "name": "admins",
+            "nodeType": "VariableDeclaration",
+            "scope": 443,
+            "src": "236:26:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Role_$798_storage",
+              "typeString": "struct Roles.Role"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 362,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 798,
+              "src": "236:10:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$798_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 365,
+            "name": "balance",
+            "nodeType": "VariableDeclaration",
+            "scope": 443,
+            "src": "312:19:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 364,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "312:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 368,
+            "name": "competitorAddresses",
+            "nodeType": "VariableDeclaration",
+            "scope": 443,
+            "src": "384:38:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 366,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "384:7:2",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 367,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "384:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 372,
+            "name": "stage",
+            "nodeType": "VariableDeclaration",
+            "scope": 443,
+            "src": "454:41:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_enum$_Stages_$361",
+              "typeString": "enum GameJamCommon.Stages"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 369,
+              "name": "Stages",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 361,
+              "src": "454:6:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_Stages_$361",
+                "typeString": "enum GameJamCommon.Stages"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "expression": {
+                "argumentTypes": null,
+                "id": 370,
+                "name": "Stages",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 361,
+                "src": "476:6:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_enum$_Stages_$361_$",
+                  "typeString": "type(enum GameJamCommon.Stages)"
+                }
+              },
+              "id": 371,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "memberName": "Registration",
+              "nodeType": "MemberAccess",
+              "referencedDeclaration": null,
+              "src": "476:19:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_Stages_$361",
+                "typeString": "enum GameJamCommon.Stages"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 374,
+            "name": "winner",
+            "nodeType": "VariableDeclaration",
+            "scope": 443,
+            "src": "528:22:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address_payable",
+              "typeString": "address payable"
+            },
+            "typeName": {
+              "id": 373,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "528:15:2",
+              "stateMutability": "payable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "GameJamCommon.CompetitorData",
+            "id": 379,
+            "members": [
+              {
+                "constant": false,
+                "id": 376,
+                "name": "ipfsHash",
+                "nodeType": "VariableDeclaration",
+                "scope": 379,
+                "src": "615:15:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 375,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "615:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 378,
+                "name": "votes",
+                "nodeType": "VariableDeclaration",
+                "scope": 379,
+                "src": "636:10:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 377,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "636:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "CompetitorData",
+            "nodeType": "StructDefinition",
+            "scope": 443,
+            "src": "587:64:2",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 383,
+            "name": "competitors",
+            "nodeType": "VariableDeclaration",
+            "scope": 443,
+            "src": "700:53:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_CompetitorData_$379_storage_$",
+              "typeString": "mapping(address => struct GameJamCommon.CompetitorData)"
+            },
+            "typeName": {
+              "id": 382,
+              "keyType": {
+                "id": 380,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "708:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "700:34:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_CompetitorData_$379_storage_$",
+                "typeString": "mapping(address => struct GameJamCommon.CompetitorData)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 381,
+                "name": "CompetitorData",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 379,
+                "src": "719:14:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_CompetitorData_$379_storage_ptr",
+                  "typeString": "struct GameJamCommon.CompetitorData"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 394,
+              "nodeType": "Block",
+              "src": "859:127:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 387,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 887,
+                              "src": "888:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 388,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "888:10:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "id": 386,
+                          "name": "isGameJamAdmin",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 421,
+                          "src": "873:14:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view returns (bool)"
+                          }
+                        },
+                        "id": 389,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "873:26:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "47616d654a616d41646d696e20726f6c652072657175697265643a2063616c6c657220646f6573206e6f742068617665207468652047616d654a616d41646d696e20726f6c65",
+                        "id": 390,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "901:72:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d6d106a94d5e2ff3bf5c88ed7abf273111bd5dc64068c30f7e1b82bb0213ea29",
+                          "typeString": "literal_string \"GameJamAdmin role required: caller does not have the GameJamAdmin role\""
+                        },
+                        "value": "GameJamAdmin role required: caller does not have the GameJamAdmin role"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d6d106a94d5e2ff3bf5c88ed7abf273111bd5dc64068c30f7e1b82bb0213ea29",
+                          "typeString": "literal_string \"GameJamAdmin role required: caller does not have the GameJamAdmin role\""
+                        }
+                      ],
+                      "id": 385,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        890,
+                        891
+                      ],
+                      "referencedDeclaration": 891,
+                      "src": "865:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 391,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "865:109:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 392,
+                  "nodeType": "ExpressionStatement",
+                  "src": "865:109:2"
+                },
+                {
+                  "id": 393,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "980:1:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 395,
+            "name": "onlyGameJamAdmin",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 384,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "854:2:2"
+            },
+            "src": "829:157:2",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 407,
+              "nodeType": "Block",
+              "src": "1095:103:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_enum$_Stages_$361",
+                          "typeString": "enum GameJamCommon.Stages"
+                        },
+                        "id": 402,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 400,
+                          "name": "stage",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 372,
+                          "src": "1116:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_Stages_$361",
+                            "typeString": "enum GameJamCommon.Stages"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 401,
+                          "name": "_stage",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 397,
+                          "src": "1125:6:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_Stages_$361",
+                            "typeString": "enum GameJamCommon.Stages"
+                          }
+                        },
+                        "src": "1116:15:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "46756e6374696f6e2063616e6e6f742062652063616c6c656420617420746869732074696d652e",
+                        "id": 403,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1139:41:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_60e177e2f8092f1d0e1287f1dfb9987dbc6be733d1f014a9c734e6935b828f7b",
+                          "typeString": "literal_string \"Function cannot be called at this time.\""
+                        },
+                        "value": "Function cannot be called at this time."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_60e177e2f8092f1d0e1287f1dfb9987dbc6be733d1f014a9c734e6935b828f7b",
+                          "typeString": "literal_string \"Function cannot be called at this time.\""
+                        }
+                      ],
+                      "id": 399,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        890,
+                        891
+                      ],
+                      "referencedDeclaration": 891,
+                      "src": "1101:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 404,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1101:85:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 405,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1101:85:2"
+                },
+                {
+                  "id": 406,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1192:1:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 408,
+            "name": "onlyAtStage",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 398,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 397,
+                  "name": "_stage",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 408,
+                  "src": "1080:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Stages_$361",
+                    "typeString": "enum GameJamCommon.Stages"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 396,
+                    "name": "Stages",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 361,
+                    "src": "1080:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Stages_$361",
+                      "typeString": "enum GameJamCommon.Stages"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1079:15:2"
+            },
+            "src": "1059:139:2",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 420,
+              "nodeType": "Block",
+              "src": "1341:37:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 417,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 410,
+                        "src": "1365:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 415,
+                        "name": "admins",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 363,
+                        "src": "1354:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$798_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 416,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "has",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 871,
+                      "src": "1354:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$798_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$798_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address) view returns (bool)"
+                      }
+                    },
+                    "id": 418,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1354:19:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 414,
+                  "id": 419,
+                  "nodeType": "Return",
+                  "src": "1347:26:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 421,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isGameJamAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 411,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 410,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 421,
+                  "src": "1283:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 409,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1283:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1282:17:2"
+            },
+            "returnParameters": {
+              "id": 414,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 413,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 421,
+                  "src": "1333:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 412,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1333:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1332:6:2"
+            },
+            "scope": 443,
+            "src": "1259:119:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 434,
+              "nodeType": "Block",
+              "src": "1475:42:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 432,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 424,
+                      "name": "stage",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 372,
+                      "src": "1481:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Stages_$361",
+                        "typeString": "enum GameJamCommon.Stages"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 430,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "id": 427,
+                                "name": "stage",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 372,
+                                "src": "1501:5:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_enum$_Stages_$361",
+                                  "typeString": "enum GameJamCommon.Stages"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_enum$_Stages_$361",
+                                  "typeString": "enum GameJamCommon.Stages"
+                                }
+                              ],
+                              "id": 426,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "1496:4:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_uint256_$",
+                                "typeString": "type(uint256)"
+                              },
+                              "typeName": "uint"
+                            },
+                            "id": 428,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1496:11:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "+",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "31",
+                            "id": 429,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1510:1:2",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          "src": "1496:15:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "id": 425,
+                        "name": "Stages",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 361,
+                        "src": "1489:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_Stages_$361_$",
+                          "typeString": "type(enum GameJamCommon.Stages)"
+                        }
+                      },
+                      "id": 431,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1489:23:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Stages_$361",
+                        "typeString": "enum GameJamCommon.Stages"
+                      }
+                    },
+                    "src": "1481:31:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Stages_$361",
+                      "typeString": "enum GameJamCommon.Stages"
+                    }
+                  },
+                  "id": 433,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1481:31:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 435,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "nextStage",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 422,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1457:2:2"
+            },
+            "returnParameters": {
+              "id": 423,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1475:0:2"
+            },
+            "scope": 443,
+            "src": "1439:78:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 441,
+              "nodeType": "Block",
+              "src": "1592:29:2",
+              "statements": [
+                {
+                  "id": 437,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1598:1:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 438,
+                      "name": "nextStage",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 435,
+                      "src": "1605:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 439,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1605:11:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 440,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1605:11:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 442,
+            "name": "transitionNext",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 436,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1587:2:2"
+            },
+            "src": "1564:57:2",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 444,
+        "src": "86:1537:2"
+      }
+    ],
+    "src": "0:1623:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/bbk-dev/git/game-jam-smart-contracts/contracts/GameJamCommon.sol",
+    "exportedSymbols": {
+      "GameJamCommon": [
+        443
+      ]
+    },
+    "id": 444,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 353,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "openzeppelin-solidity/contracts/access/Roles.sol",
+        "file": "openzeppelin-solidity/contracts/access/Roles.sol",
+        "id": 354,
+        "nodeType": "ImportDirective",
+        "scope": 444,
+        "sourceUnit": 873,
+        "src": "25:58:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 443,
+        "linearizedBaseContracts": [
+          443
+        ],
+        "name": "GameJamCommon",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 357,
+            "libraryName": {
+              "contractScope": null,
+              "id": 355,
+              "name": "Roles",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 872,
+              "src": "119:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Roles_$872",
+                "typeString": "library Roles"
+              }
+            },
+            "nodeType": "UsingForDirective",
+            "src": "113:27:2",
+            "typeName": {
+              "contractScope": null,
+              "id": 356,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 798,
+              "src": "129:10:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$798_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            }
+          },
+          {
+            "canonicalName": "GameJamCommon.Stages",
+            "id": 361,
+            "members": [
+              {
+                "id": 358,
+                "name": "Registration",
+                "nodeType": "EnumValue",
+                "src": "164:12:2"
+              },
+              {
+                "id": 359,
+                "name": "InProgress",
+                "nodeType": "EnumValue",
+                "src": "182:10:2"
+              },
+              {
+                "id": 360,
+                "name": "Finished",
+                "nodeType": "EnumValue",
+                "src": "198:8:2"
+              }
+            ],
+            "name": "Stages",
+            "nodeType": "EnumDefinition",
+            "src": "144:66:2"
+          },
+          {
+            "constant": false,
+            "id": 363,
+            "name": "admins",
+            "nodeType": "VariableDeclaration",
+            "scope": 443,
+            "src": "236:26:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_Role_$798_storage",
+              "typeString": "struct Roles.Role"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 362,
+              "name": "Roles.Role",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 798,
+              "src": "236:10:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_Role_$798_storage_ptr",
+                "typeString": "struct Roles.Role"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 365,
+            "name": "balance",
+            "nodeType": "VariableDeclaration",
+            "scope": 443,
+            "src": "312:19:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 364,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "312:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 368,
+            "name": "competitorAddresses",
+            "nodeType": "VariableDeclaration",
+            "scope": 443,
+            "src": "384:38:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 366,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "384:7:2",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 367,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "384:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 372,
+            "name": "stage",
+            "nodeType": "VariableDeclaration",
+            "scope": 443,
+            "src": "454:41:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_enum$_Stages_$361",
+              "typeString": "enum GameJamCommon.Stages"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 369,
+              "name": "Stages",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 361,
+              "src": "454:6:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_Stages_$361",
+                "typeString": "enum GameJamCommon.Stages"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "expression": {
+                "argumentTypes": null,
+                "id": 370,
+                "name": "Stages",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 361,
+                "src": "476:6:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_enum$_Stages_$361_$",
+                  "typeString": "type(enum GameJamCommon.Stages)"
+                }
+              },
+              "id": 371,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "memberName": "Registration",
+              "nodeType": "MemberAccess",
+              "referencedDeclaration": null,
+              "src": "476:19:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_Stages_$361",
+                "typeString": "enum GameJamCommon.Stages"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 374,
+            "name": "winner",
+            "nodeType": "VariableDeclaration",
+            "scope": 443,
+            "src": "528:22:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address_payable",
+              "typeString": "address payable"
+            },
+            "typeName": {
+              "id": 373,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "528:15:2",
+              "stateMutability": "payable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "GameJamCommon.CompetitorData",
+            "id": 379,
+            "members": [
+              {
+                "constant": false,
+                "id": 376,
+                "name": "ipfsHash",
+                "nodeType": "VariableDeclaration",
+                "scope": 379,
+                "src": "615:15:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 375,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "615:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 378,
+                "name": "votes",
+                "nodeType": "VariableDeclaration",
+                "scope": 379,
+                "src": "636:10:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 377,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "636:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "CompetitorData",
+            "nodeType": "StructDefinition",
+            "scope": 443,
+            "src": "587:64:2",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 383,
+            "name": "competitors",
+            "nodeType": "VariableDeclaration",
+            "scope": 443,
+            "src": "700:53:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_CompetitorData_$379_storage_$",
+              "typeString": "mapping(address => struct GameJamCommon.CompetitorData)"
+            },
+            "typeName": {
+              "id": 382,
+              "keyType": {
+                "id": 380,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "708:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "700:34:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_CompetitorData_$379_storage_$",
+                "typeString": "mapping(address => struct GameJamCommon.CompetitorData)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 381,
+                "name": "CompetitorData",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 379,
+                "src": "719:14:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_CompetitorData_$379_storage_ptr",
+                  "typeString": "struct GameJamCommon.CompetitorData"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 394,
+              "nodeType": "Block",
+              "src": "859:127:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 387,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 887,
+                              "src": "888:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 388,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "888:10:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          ],
+                          "id": 386,
+                          "name": "isGameJamAdmin",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 421,
+                          "src": "873:14:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view returns (bool)"
+                          }
+                        },
+                        "id": 389,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "873:26:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "47616d654a616d41646d696e20726f6c652072657175697265643a2063616c6c657220646f6573206e6f742068617665207468652047616d654a616d41646d696e20726f6c65",
+                        "id": 390,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "901:72:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d6d106a94d5e2ff3bf5c88ed7abf273111bd5dc64068c30f7e1b82bb0213ea29",
+                          "typeString": "literal_string \"GameJamAdmin role required: caller does not have the GameJamAdmin role\""
+                        },
+                        "value": "GameJamAdmin role required: caller does not have the GameJamAdmin role"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d6d106a94d5e2ff3bf5c88ed7abf273111bd5dc64068c30f7e1b82bb0213ea29",
+                          "typeString": "literal_string \"GameJamAdmin role required: caller does not have the GameJamAdmin role\""
+                        }
+                      ],
+                      "id": 385,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        890,
+                        891
+                      ],
+                      "referencedDeclaration": 891,
+                      "src": "865:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 391,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "865:109:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 392,
+                  "nodeType": "ExpressionStatement",
+                  "src": "865:109:2"
+                },
+                {
+                  "id": 393,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "980:1:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 395,
+            "name": "onlyGameJamAdmin",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 384,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "854:2:2"
+            },
+            "src": "829:157:2",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 407,
+              "nodeType": "Block",
+              "src": "1095:103:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_enum$_Stages_$361",
+                          "typeString": "enum GameJamCommon.Stages"
+                        },
+                        "id": 402,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 400,
+                          "name": "stage",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 372,
+                          "src": "1116:5:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_Stages_$361",
+                            "typeString": "enum GameJamCommon.Stages"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 401,
+                          "name": "_stage",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 397,
+                          "src": "1125:6:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_Stages_$361",
+                            "typeString": "enum GameJamCommon.Stages"
+                          }
+                        },
+                        "src": "1116:15:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "46756e6374696f6e2063616e6e6f742062652063616c6c656420617420746869732074696d652e",
+                        "id": 403,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1139:41:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_60e177e2f8092f1d0e1287f1dfb9987dbc6be733d1f014a9c734e6935b828f7b",
+                          "typeString": "literal_string \"Function cannot be called at this time.\""
+                        },
+                        "value": "Function cannot be called at this time."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_60e177e2f8092f1d0e1287f1dfb9987dbc6be733d1f014a9c734e6935b828f7b",
+                          "typeString": "literal_string \"Function cannot be called at this time.\""
+                        }
+                      ],
+                      "id": 399,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        890,
+                        891
+                      ],
+                      "referencedDeclaration": 891,
+                      "src": "1101:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 404,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1101:85:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 405,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1101:85:2"
+                },
+                {
+                  "id": 406,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1192:1:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 408,
+            "name": "onlyAtStage",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 398,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 397,
+                  "name": "_stage",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 408,
+                  "src": "1080:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Stages_$361",
+                    "typeString": "enum GameJamCommon.Stages"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 396,
+                    "name": "Stages",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 361,
+                    "src": "1080:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Stages_$361",
+                      "typeString": "enum GameJamCommon.Stages"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1079:15:2"
+            },
+            "src": "1059:139:2",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 420,
+              "nodeType": "Block",
+              "src": "1341:37:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 417,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 410,
+                        "src": "1365:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 415,
+                        "name": "admins",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 363,
+                        "src": "1354:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Role_$798_storage",
+                          "typeString": "struct Roles.Role storage ref"
+                        }
+                      },
+                      "id": 416,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "has",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 871,
+                      "src": "1354:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_Role_$798_storage_ptr_$_t_address_$returns$_t_bool_$bound_to$_t_struct$_Role_$798_storage_ptr_$",
+                        "typeString": "function (struct Roles.Role storage pointer,address) view returns (bool)"
+                      }
+                    },
+                    "id": 418,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1354:19:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 414,
+                  "id": 419,
+                  "nodeType": "Return",
+                  "src": "1347:26:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 421,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isGameJamAdmin",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 411,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 410,
+                  "name": "account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 421,
+                  "src": "1283:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 409,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1283:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1282:17:2"
+            },
+            "returnParameters": {
+              "id": 414,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 413,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 421,
+                  "src": "1333:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 412,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1333:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1332:6:2"
+            },
+            "scope": 443,
+            "src": "1259:119:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 434,
+              "nodeType": "Block",
+              "src": "1475:42:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 432,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 424,
+                      "name": "stage",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 372,
+                      "src": "1481:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Stages_$361",
+                        "typeString": "enum GameJamCommon.Stages"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 430,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "id": 427,
+                                "name": "stage",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 372,
+                                "src": "1501:5:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_enum$_Stages_$361",
+                                  "typeString": "enum GameJamCommon.Stages"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_enum$_Stages_$361",
+                                  "typeString": "enum GameJamCommon.Stages"
+                                }
+                              ],
+                              "id": 426,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "1496:4:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_uint256_$",
+                                "typeString": "type(uint256)"
+                              },
+                              "typeName": "uint"
+                            },
+                            "id": 428,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1496:11:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "+",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "31",
+                            "id": 429,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1510:1:2",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_1_by_1",
+                              "typeString": "int_const 1"
+                            },
+                            "value": "1"
+                          },
+                          "src": "1496:15:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "id": 425,
+                        "name": "Stages",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 361,
+                        "src": "1489:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_Stages_$361_$",
+                          "typeString": "type(enum GameJamCommon.Stages)"
+                        }
+                      },
+                      "id": 431,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1489:23:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Stages_$361",
+                        "typeString": "enum GameJamCommon.Stages"
+                      }
+                    },
+                    "src": "1481:31:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Stages_$361",
+                      "typeString": "enum GameJamCommon.Stages"
+                    }
+                  },
+                  "id": 433,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1481:31:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 435,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "nextStage",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 422,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1457:2:2"
+            },
+            "returnParameters": {
+              "id": 423,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1475:0:2"
+            },
+            "scope": 443,
+            "src": "1439:78:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 441,
+              "nodeType": "Block",
+              "src": "1592:29:2",
+              "statements": [
+                {
+                  "id": 437,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1598:1:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 438,
+                      "name": "nextStage",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 435,
+                      "src": "1605:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 439,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1605:11:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 440,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1605:11:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 442,
+            "name": "transitionNext",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 436,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1587:2:2"
+            },
+            "src": "1564:57:2",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 444,
+        "src": "86:1537:2"
+      }
+    ],
+    "src": "0:1623:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.16",
+  "updatedAt": "2019-10-26T19:33:27.614Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

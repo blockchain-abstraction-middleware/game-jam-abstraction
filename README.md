@@ -3,6 +3,8 @@
 ## Overview
 Game Jam smart contract abstraction
 
+[Game Jam Smart Contract Repo](https://github.com/blockchain-abstraction-middleware/game-jam-smart-contracts)
+
 ### Running the service
 ```shell
 make serve
@@ -33,3 +35,4 @@ Swagger ui will be exposed at:
 ```
 0.0.0.0:8080/api/v1/swagger/docs/swaggerui/
 ```
+
