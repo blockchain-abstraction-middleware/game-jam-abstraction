@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
-  title: Project Template
-  description: This is a sample project template to be used to scaffold blockchain services
+  title: Game Jam Abstraction
+  description: Game Jam Smart Contract Abstraction
   contact:
     email: support@bam.io
   license:
@@ -9,16 +9,16 @@ info:
     url: https://opensource.org/licenses/MIT
   version: 1.0.0
 tags:
-- name: project-template
-  description: Sample scaffolding project
+- name: game-jam-abstraction
+  description: 
   externalDocs:
-    description: Find out more
-    url: http://swagger.io
+    description: Chain Abstraction Development Team
+    url: http://chain-abstraction.dev
 paths:
   /api/v1/health/status:
     get:
       tags:
-      - project-template
+      - game-jam-abstraction
       summary: Check the health of the service
       operationId: healthCheck
       responses:
@@ -39,6 +39,30 @@ paths:
       security:
       - auth:
         - bam:access
+  /api/v1/manager/get-all-gamejams:
+    get:
+      tags:
+      - game-jam-abstraction
+      summary: Get all active game jams
+      operationId: getAllJams
+      responses:
+        200:
+          description: healthy response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AllAddresses'
+        404:
+          description: Not found
+          content: {}
+        401:
+          description: Unauthorized
+          content: {}
+      security:
+      - auth:
+        - bam:access
 components:
   schemas:
     Health:
@@ -47,6 +71,15 @@ components:
         message:
           type: string
           example: Healthy response from service at - 2019-10-28 01:15:49.392631014 +0000 GMT m=+72.576498242
+        statusCode:
+          type: number
+          example: 200
+    AllAddresses:
+      type: object
+      properties:
+        addressList:
+          type: string
+          example: {"addressList":"0xA116c0dF8048741AAA9f6C46118faA92527b6221","statusCode":200}
         statusCode:
           type: number
           example: 200

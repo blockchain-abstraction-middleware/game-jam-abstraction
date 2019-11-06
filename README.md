@@ -30,9 +30,13 @@ make docker-build
 curl 0.0.0.0:8080/api/v1/health/status
 ```
 
+### Get all game jams
+```shell
+curl 0.0.0.0:8080/api/v1/manager/get-all-gamejams | jq
+```
+
 ### Swagger UI
 Swagger ui will be exposed at:
 ```
 0.0.0.0:8080/api/v1/swagger/docs/swaggerui/
 ```
-

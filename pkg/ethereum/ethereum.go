@@ -1,4 +1,4 @@
-package resources
+package ethereum
 
 import (
 	ethclient "github.com/ethereum/go-ethereum/ethclient"
