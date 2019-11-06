@@ -1,4 +1,11 @@
 environment: staging
-name: project-template
+name: game-jam-abstraction
 port: 8080
 metrics: false
+contracts:
+  gameManagerAddress: 0x08C95379cF4815e14d8fc484E014aC6feaf8FA5f
+keys: 
+  admin: FD334718BF8043D65B74447B3B7556ADA3ABCEFD0E388CBF8D67DA3E3430F4AE
+infura:
+  url: https://rinkeby.infura.io/v3/
+  key: /

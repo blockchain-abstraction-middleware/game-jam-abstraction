@@ -1,7 +1,7 @@
 VERSION := 0.0.1
 
 DOCKER_REG = bamdockerhub
-DOCKER_IMAGE = project-template
+DOCKER_IMAGE = game-abstraction-middleware
 DOCKER_IMAGE_TAG = $(VERSION)
 USER = $(shell whoami)
 

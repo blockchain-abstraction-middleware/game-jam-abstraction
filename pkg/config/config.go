@@ -1,4 +1,4 @@
-package server
+package config
 
 import (
 	"fmt"
@@ -19,6 +19,10 @@ type Config struct {
 	MetricsEnabled bool
 	Name           string
 	Port           int
+	ManagerAddress string
+	AdminKey       string
+	InfuraURL      string
+	InfuraKey      string
 }
 
 // NewConfig constructs a new *server.Config instance with defaults
@@ -36,6 +40,10 @@ func NewConfig() *Config {
 		Name:           viper.GetString("name"),
 		Port:           viper.GetInt("port"),
 		MetricsEnabled: viper.GetBool("metrics"),
+		ManagerAddress: viper.GetString("contracts.gameManagerAddress"),
+		AdminKey:       viper.GetString("keys.admin"),
+		InfuraURL:      viper.GetString("infura.url"),
+		InfuraKey:      viper.GetString("infura.key"),
 	}
 }
 
