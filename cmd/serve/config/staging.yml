@@ -1,11 +1,38 @@
-environment: staging
-name: game-jam-abstraction
-port: 8080
-metrics: false
+environment: ENC[AES256_GCM,data:ci1CbwqV,iv:5eU2ctu0SHzFppwqin0gEWEsihaNzX2tKp/LAfRcpBc=,tag:hELJq3F89mBQnXofkx40Kw==,type:str]
+name: ENC[AES256_GCM,data:i6tyh9w0WE6spqn4fL5j5W5+V+w=,iv:uT1dZS/qvwpo7Abj6jlhmcyRenH59wv/zyRDDxQf1cQ=,tag:JxEY3VhR6k+47LCMHW7hpw==,type:str]
+port: ENC[AES256_GCM,data:k33sZw==,iv:TkY/LbqDxJ63W58JfCG36NtZdefMD0/e8R4FIqQ/O4c=,tag:tF/x8xml1jXq2CI2u3Y6lg==,type:int]
+metrics: ENC[AES256_GCM,data:1DnJrno=,iv:YJeEqAwSaLFKyc1FyQLmeAfnumkh8TIWuLMaH4hdniM=,tag:4r8HZf2QITfC5K0UyxDPzg==,type:bool]
 contracts:
-  gameManagerAddress: 0x08C95379cF4815e14d8fc484E014aC6feaf8FA5f
-keys: 
-  admin: FD334718BF8043D65B74447B3B7556ADA3ABCEFD0E388CBF8D67DA3E3430F4AE
+    gameManagerAddress: ENC[AES256_GCM,data:cdt7YcE6sEJMH1AtlHN8wvrLFKXsWbePy2VHXqNgVrjrxM+UU02JjDH+,iv:QXYbplYrBZSpfAS0k4XxWukuQf2hxEG1gKEMzyY/xZs=,tag:CiDSVNC9COdxgbkSQHJ0nQ==,type:str]
+keys:
+    admin: ENC[AES256_GCM,data:rQjpVYxqjw1Ugv4BO/JgSAgdG3dgyV4JyN07889HgE7+1CCGzOc4yK2/g+sNZ1LGPT+WncZd9Mi1lJs3JrMT8Q==,iv:0Swi5C77LZIkQ9ni+a+R8nb67nUOKSMTJmjE5mlYioY=,tag:xKcPhH360eyumcwVuKONsg==,type:str]
 infura:
-  url: https://rinkeby.infura.io/v3/
-  key: /
+    url: ENC[AES256_GCM,data:F2jOKwz8uZLNSi1dIMj+uiUDQHCOAOJtKVhZW8o=,iv:TeVA6xsXYHxIMTOSJq7lEWXx8y20CMr+yTxil9D+Id0=,tag:PSoFVvRb0wpENfuoOIy0QQ==,type:str]
+    key: ENC[AES256_GCM,data:GEXkf8YBp5hQ0aTO9F9iEVdrHDR82sOH1KVFrdlN23o=,iv:bP7WaUE7uCGgOVb4NxBpKdIMPWlcaK3Vca1DJOD5t3s=,tag:Pfi8UlBRKLbhnqQV4laGWA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    lastmodified: '2019-11-12T22:00:21Z'
+    mac: ENC[AES256_GCM,data:kgnsJKDMbZmCeoapn6KzbJbgWeG/iygNF2uGIRVpviSxnUQtu3QvDsh4d+or1yaClAMjhPHMXmDZWlUlPyQdZ3yIgQwyAFMJI5lyY+XJOZO7Cwf3M3RlptGoHzodFvsUwxWkT7AMp8Eq7HsvlXKEdb0NJOfEB5MSoifdtoVt6mY=,iv:3GNYlNKiNsKrgwY14QQzdYrS3WovxlkxekTzvd24QSc=,tag:HtZ5+YxSAWEq0w/F4DEusg==,type:str]
+    pgp:
+    -   created_at: '2019-11-12T22:00:20Z'
+        enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQGMAxcmV5QPlTskAQwAvXt0IhotnXgP0sgOpHc+OyPQxuSGs4K+bNY4OMqBv5AZ
+            Wg7jbEB3hfJjw8dR3LpoEjljlAIafOlZFcE3DQ/yhlZ76TdPCSAMxNVkMyiBmRKn
+            gcusZ3e3tiFonUfS0ANzZd4XQGRQXWybL9J0p8SwL2NB6jYbN27aQIgLh5CITJm1
+            GYw1FgJBPAs/txycJ6yQAMr+Pu5SaGkiujxvKqTE2Iu959PzvOOOHSkX6/mP1rfF
+            ldNW5A5cJv2Rm8vQsmQWedBuKqeLLS+QSelMp3YIFtm+qrv3T75FmQTzS7JNOX/3
+            YuE2Dp/FteBoUl8I1GqN+fWuMkmD0VlCw9I3X59XtIuSxAFAydS+kr6H1JHFjxID
+            aT2BTJVhLjUZohrdJWkBxnn0SnrUHd51gdHNuqH4zmCHm1QeBH93TlzAglL9oRt3
+            LK0/74T/vyWsSBGtXZvTbG6PMEk9S/RhZshLMvH8+iEIMWYY8wftLAc51XfNIl+0
+            fcM7aWAl7qgDPXC7SeZK0l4Bi2jyOZO8mY03aw4t6tx1k9GXe6aRxaMs68xsXhUv
+            SgOg3xI76yr6aCFp1/VCqNUWK7eU6p+mp0WCeKZOMy2mtaW0+mJm+gMYjQNBgGPO
+            RHWdUPTNPnbF5w7DWhDL
+            =HJp4
+            -----END PGP MESSAGE-----
+        fp: 47C52A44009F2CDD681FEF9CF92E5E7AE9DCCB07
+    unencrypted_suffix: _unencrypted
+    version: 3.4.0
