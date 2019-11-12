@@ -4,47 +4,51 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/spf13/viper"
+	"github.com/blockchain-abstraction-middleware/encrypt/decrypt"
+	"github.com/ghodss/yaml"
 )
 
 // Environment Vars
 const (
-	EnvEnvironment    = "ENVIRONMENT"
+	EnvConfigName     = "CONFIG_NAME"
 	EnvConfigLocation = "CONFIG_PATH"
 )
 
-// Config exposes Server configuration options
+// Config exposes service configuration options
 type Config struct {
-	BasePath       string
-	MetricsEnabled bool
-	Name           string
-	Port           int
-	ManagerAddress string
-	AdminKey       string
-	InfuraURL      string
-	InfuraKey      string
+	Environment    string `yaml:"environment"`
+	Name           string `yaml:"name"`
+	Port           int    `yaml:"port"`
+	MetricsEnabled bool   `yaml:"metrics"`
+	Contracts      struct {
+		GameManagerAddress string `yaml:"gameManagerAddress"`
+	} `yaml:"contracts"`
+
+	Keys struct {
+		Admin string `yaml:"admin"`
+	} `yaml:"keys"`
+
+	Infura struct {
+		URL string `yaml:"url"`
+		Key string `yaml:"key"`
+	} `yaml:"infura"`
 }
 
 // NewConfig constructs a new *server.Config instance with defaults
 func NewConfig() *Config {
-	viper.SetConfigName(getEnvironmentVariable(EnvEnvironment, "review"))
-	viper.AddConfigPath(getEnvironmentVariable(EnvConfigLocation, "./config"))
+	var config Config
 
-	err := viper.ReadInConfig()
+	decryptedFile, err := decrypt.Decrypt(getEnvironmentVariable(EnvConfigLocation, "./config/"), getEnvironmentVariable(EnvConfigName, "review.yml"))
 	if err != nil {
-		panic(fmt.Errorf("Fatal error config file: %s", err))
+		panic(fmt.Errorf("Fatal error decrypting config file: %s", err))
 	}
 
-	return &Config{
-		BasePath:       "/api/v1",
-		Name:           viper.GetString("name"),
-		Port:           viper.GetInt("port"),
-		MetricsEnabled: viper.GetBool("metrics"),
-		ManagerAddress: viper.GetString("contracts.gameManagerAddress"),
-		AdminKey:       viper.GetString("keys.admin"),
-		InfuraURL:      viper.GetString("infura.url"),
-		InfuraKey:      viper.GetString("infura.key"),
+	err = yaml.Unmarshal(decryptedFile, &config)
+	if err != nil {
+		panic(fmt.Errorf("Fatal error parsing into config file: %s", err))
 	}
+
+	return &config
 }
 
 func getEnvironmentVariable(key string, fallback string) string {

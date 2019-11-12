@@ -36,26 +36,26 @@ func (r *ManagerResource) Path() string {
 func (r *ManagerResource) Routes() http.Handler {
 	router := chi.NewRouter()
 
-	privKey, err := crypto.HexToECDSA(r.config.AdminKey)
+	privKey, err := crypto.HexToECDSA(r.config.Keys.Admin)
 	if err != nil {
 		log.WithError(err).Error("Failed to load key")
 	}
 
-	ec, err := ethereum.CreateEthClient(r.config.InfuraURL + r.config.InfuraKey)
+	ec, err := ethereum.CreateEthClient(r.config.Infura.URL + r.config.Infura.Key)
 	if err != nil {
 		log.WithError(err).Error("Failed to initialize ethereum client")
 	}
 
 	auth := bind.NewKeyedTransactor(privKey)
 
-	gameJamManagerContract, err := gamejammanager.NewManager(ec, r.config.ManagerAddress, auth)
+	gameJamManagerContract, err := gamejammanager.NewManager(ec, r.config.Contracts.GameManagerAddress, auth)
 	if err != nil {
 		log.WithError(err).Error("Failed to create game jam manager")
 	}
 
 	router.Get("/get-all-gamejams", r.getAllAddresses(gameJamManagerContract))
 
-	log.WithFields(log.Fields{"Contract": "Game Manager", "Address": r.config.ManagerAddress}).Info("Created manager abstraction")
+	log.WithFields(log.Fields{"Contract": "Game Manager", "Address": r.config.Contracts.GameManagerAddress}).Info("Created manager abstraction")
 
 	return router
 }
