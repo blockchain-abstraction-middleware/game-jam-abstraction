@@ -33,8 +33,11 @@ jobs:
 
             terraform init -backend-config="conn_str=$PG_URI"
 
+            export TF_VAR_config_file=/review.yml
+            export TF_VAR_config_path=/config
+
             terraform workspace select go-apis
-            # terraform taint module.go_api_deployment_game_jam_abstraction.kubernetes_deployment.main
+            export IS_ALIVE=$(terraform taint module.go_api_deployment_game_jam_abstraction.kubernetes_deployment.main)
             terraform apply -auto-approve
 
 workflows:

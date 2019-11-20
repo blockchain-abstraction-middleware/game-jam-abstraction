@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/blockchain-abstraction-middleware/encrypt/decrypt"
+	"github.com/blockchain-abstraction-middleware/decrypter/decrypt"
 	"github.com/ghodss/yaml"
 )
 
