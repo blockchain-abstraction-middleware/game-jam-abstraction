@@ -7,7 +7,7 @@ import (
 	"github.com/blockchain-abstraction-middleware/game-jam-abstraction/pkg/config"
 	"github.com/blockchain-abstraction-middleware/game-jam-abstraction/pkg/ethereum"
 	"github.com/blockchain-abstraction-middleware/game-jam-abstraction/pkg/gamejammanager"
-	log "github.com/blockchain-abstraction-middleware/project-template/pkg/logger"
+	log "github.com/blockchain-abstraction-middleware/rest-api/pkg/logger"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/go-chi/chi"
