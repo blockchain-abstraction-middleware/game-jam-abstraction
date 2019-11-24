@@ -14,6 +14,6 @@ module "go_api_deployment_game_jam_abstraction" {
   namespace       = "go-apis"
   deployment_name = "game-jam-abstraction"
   docker_image    = "bamdockerhub/game-jam-abstraction"
-  config_file="review.yml"
-  config_path="/config/"
+  config_file     = "review.yml"
+  config_path     = "/config/"
 }

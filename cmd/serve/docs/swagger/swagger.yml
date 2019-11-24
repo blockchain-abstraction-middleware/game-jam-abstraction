@@ -79,7 +79,7 @@ components:
       properties:
         addressList:
           type: string
-          example: {"addressList":"0xA116c0dF8048741AAA9f6C46118faA92527b6221","statusCode":200}
+          example: 0xA116c0dF8048741AAA9f6C46118faA92527b6221
         statusCode:
           type: number
           example: 200

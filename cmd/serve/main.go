@@ -26,7 +26,7 @@ func main() {
 	gameManagerResource := gm.ManagerResource{}
 
 	srv.RegisterResource(healthResource.NewResource("/health"))
-	srv.RegisterResource(swaggerResource.NewResource("/swagger"))
+	srv.RegisterResource(swaggerResource.NewResource("/swagger", "/api/v1/swagger"))
 
 	srv.RegisterResource(gameManagerResource.NewResource("/manager", abstractionConfig))
 
