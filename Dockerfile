@@ -16,4 +16,6 @@ COPY --from=build-env /go/src/github.com/blockchain-abstraction-middleware/game-
 
 COPY --from=build-env /go/src/github.com/blockchain-abstraction-middleware/game-jam-abstraction/cmd/serve/config ./config
 
-CMD ["sh", "-c", "gpg --allow-secret-key-import --import /.secret-key/secring.pgp; /usr/local/bin/app"]
+COPY --from=build-env /go/src/github.com/blockchain-abstraction-middleware/game-jam-abstraction/cmd/serve/docs ./docs
+
+CMD ["sh", "-c", "gpg --allow-secret-key-import --import /.secret-key/secring.gpg; /usr/local/bin/app"]
